@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,20 +64,84 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="db\ActAboutRepair.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ConsumableMaterial.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Money_Fasilities.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Phone.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Request.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Role.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Shop.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ShopClient.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Storage.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\sysdiagrams.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\TelephoneShopModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TelephoneShopModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\TelephoneShopModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\TelephoneShopModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TelephoneShopModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="db\Type_Malfunction.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Type_Phone.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\User.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Workshop.cs">
+      <DependentUpon>TelephoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddClientWindow.xaml.cs">
+      <DependentUpon>AddClientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AuthWindow.xaml.cs">
+      <DependentUpon>AuthWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MetarialsWindow.xaml.cs">
+      <DependentUpon>MetarialsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PhoneListWindow.xaml.cs">
+      <DependentUpon>PhoneListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SellPhoneWindow.xaml.cs">
+      <DependentUpon>SellPhoneWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +159,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="db\TelephoneShopModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TelephoneShopModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="db\TelephoneShopModel.edmx.diagram">
+      <DependentUpon>TelephoneShopModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +174,43 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Pages\AddClientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AuthWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MetarialsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PhoneListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SellPhoneWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db\TelephoneShopModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TelephoneShopModel.edmx</DependentUpon>
+      <LastGenOutput>TelephoneShopModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db\TelephoneShopModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TelephoneShopModel.edmx</DependentUpon>
+      <LastGenOutput>TelephoneShopModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

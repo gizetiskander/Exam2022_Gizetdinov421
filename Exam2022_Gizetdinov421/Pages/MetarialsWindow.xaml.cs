@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Exam2022_Gizetdinov421
+namespace Exam2022_Gizetdinov421.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MetarialsWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MetarialsWindow : Window
     {
-        public MainWindow()
+        public MetarialsWindow()
         {
             InitializeComponent();
         }
